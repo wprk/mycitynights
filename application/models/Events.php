@@ -33,12 +33,12 @@ class Events extends CI_Model
 								
 			$event['pickups'] = $this->db->select('locations.name')
 								->from('event_pickups')->where('event_id', $event['id'])
-								->join('locations', 'locations.id = event_pickups.coach_location_id')
+								->join('locations', 'locations.id = event_pickups.location_id')
 								->get()->result_array();
 								
 			$event['dropoffs'] = $this->db->select('locations.name')
 								->from('event_dropoffs')->where('event_id', $event['id'])
-								->join('locations', 'locations.id = event_dropoffs.coach_location_id')
+								->join('locations', 'locations.id = event_dropoffs.location_id')
 								->get()->result_array();
 			
 			$eventList[] = $event;
