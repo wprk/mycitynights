@@ -7,6 +7,7 @@ class Homepage extends CI_Controller {
 			'title' => 'Home | MyCityNights.co.uk',
 			'active' => 'home'
 		);
+		$this->data['featured_event'] = $this->events->next_event();
 		$this->data['events'] = $this->events->all();
 		
 		$this->load->view('head', $this->data);

@@ -12,10 +12,10 @@ class Events extends CI_Model
 		
 		$eventList = array();
 
-		$this->db->select('events.id, events.name, event_types.name as type, events.start, events.end');
+		$this->db->select('events.id, events.name, event_types.name as type, events.start, events.end, events.image, events.capacity');
 		$this->db->from('events');
 		$this->db->join('event_types', 'event_types.id = events.type');
-		$this->db->order_by('events.name');
+		$this->db->order_by('events.start DESC');
 		$events = $this->db->get();
 		
 		foreach ($events->result_array() as $event) {
@@ -45,5 +45,13 @@ class Events extends CI_Model
 		};
 		
 		return $eventList;
+	}
+	
+	public function next_event() {
+		
+		$all_events = $this->all();
+		$next_event = array_pop($all_events);
+		
+		return $next_event;
 	}
 }

@@ -2,10 +2,10 @@
 		<div class="col-md-12">
 			<h2>Next Event:</h2>
 			<div class="featured-event">
-				<img src="<?php echo IMGPATH; ?>venues/club-mission-leeds.jpg" />
+				<img src="<?= IMGPATH . $featured_event['image']; ?>" />
 				<div class="event">
 					<div class="header">
-						<div class="title">Lively in Leeds</div>
+						<div class="title"><?= $featured_event['name']; ?></div>
 					</div>
 				</div>
 			</div>
