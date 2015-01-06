@@ -1,16 +1,16 @@
 <?php
-class Homepage extends CI_Controller {
+class Events extends CI_Controller {
 
 	public function index()
 	{
 		$this->data['page'] = array(
-			'title' => 'Homepage | Bar crawls | MyCityNights.co.uk',
-			'active' => 'home'
+			'title' => 'Upcoming Events | Bar crawls | MyCityNights.co.uk',
+			'active' => 'events'
 		);
 		$this->data['featured_event'] = $this->events->featured_event();
 		$this->data['events'] = $this->events->all();
 		
-		$this->data['content'] = $this->load->view('home', $this->data, true);
+		$this->data['content'] = $this->load->view('events', $this->data, true);
 		
 		$this->load->view('page', $this->data);
 	}
