@@ -3,6 +3,7 @@
 @import url('less/bootstrap.less');
 
 @import url('less/sticky-footer.less');
+@import url('less/ribbons.less');
 
 /*************************
 *******Typography******
@@ -364,8 +365,12 @@ input.search-form:hover {
 ************************/
 .featured-event {
   position: relative;
-  img {
+  .event-img {
     .make-md-column(4, 0);
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
   div.event {
     .make-md-column(8, 0);

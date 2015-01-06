@@ -2,7 +2,12 @@
 		<div class="col-md-12">
 			<h2>Next Event:</h2>
 			<div class="featured-event">
-				<img src="<?= IMGPATH . $featured_event['image']; ?>" />
+				<div class="event-img">
+					<div class="ribbon red">
+						<div class="ribbon-text"><?= $featured_event['capacity']; ?> spaces left</div>
+					</div>
+					<img src="<?= IMGPATH . $featured_event['image']; ?>" />
+				</div>
 				<div class="event">
 					<div class="header">
 						<div class="title"><?= $featured_event['name']; ?></div>
