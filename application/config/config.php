@@ -53,7 +53,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/mycitynights/';
+switch (ENVIRONMENT)
+{
+	case 'production':
+		$config['base_url'] = 'http://www.mycitynights.co.uk/';
+	break;
+	default:
+		$config['base_url'] = 'http://localhost/mycitynights/';
+	break;
+}
 
 /*
 |--------------------------------------------------------------------------
