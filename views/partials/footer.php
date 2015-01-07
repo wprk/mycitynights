@@ -12,7 +12,7 @@
 						<li><a href="<?php echo base_url("events"); ?>">Events</a></li>
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="<?php echo base_url("contact"); ?>">Contact</a></li>
 					</ul>
 				</div>
 			</div>

@@ -5,12 +5,22 @@
     <meta http-equiv="Content-Type" context="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title><?php echo $page['title']; ?></title>
+    <title><?= $page['title']; ?></title>
     <meta name="description" content="">
 
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    
+    <?php if (isset($page['header_includes'])): foreach ($page['header_includes'] as $include): ?>
+        <?php if ($include['type'] == 'js'): ?>
+            <script src="<?= $include['link']; ?>"></script>
+        <?php else: ?>
+            <link href="<?= $include['link']; ?>" rel="stylesheet">
+        <?php endif; ?>
+    <?php endforeach; endif; ?>
+    
+    <?= (isset($page['header_js']) ? $page['header_js'] : ''); ?>
 </head>
 <body>
 	<div class="wrap">
